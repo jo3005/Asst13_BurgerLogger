@@ -11,13 +11,13 @@ router.get("/", function(req, res) {
     var hbsObject = {
       burgers: data
     };
-    console.log(hbsObject);
+    //console.log(hbsObject);
     res.render("index", hbsObject);
   });
 });
 
 router.post("/api/burger", function(req, res) {
-  console.log(req.body);
+  
   burger.create(["burger_name", "devoured"], [req.body.burger_name,req.body.devoured], function(result) {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
@@ -26,9 +26,6 @@ router.post("/api/burger", function(req, res) {
 
 router.put("/api/burger/:id", function(req, res) {
   var condition = "id = " + req.params.id;
-
-  console.log("condition", condition);
-
   burger.update({
     devoured: 1
   }, condition, function(result) {

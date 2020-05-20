@@ -1,60 +1,61 @@
-<div class="grid-container five">
+<div class="container-fluid">
     
-    <div class="grid-item"></div>
-    <div class="grid-item"></div>
-    <div class="grid-item" id="grid-item1">
-        <img src="/assets/images/images.jpg" alt= "" class="burger-pic"> 
+    <div class="row" id="grid-item1">
+        <div class="col-sm-5"></div>
+        <div class="col-sm-2">
+            <img src="/assets/images/images.jpg" alt= "" class="burger-pic"> 
+        </div>
+        <div class="col-sm-5"></div>
+
+    </div>
     
-    </div>
-    <div class="grid-item"></div>
-    <div class="grid-item"></div>
-</div>
-<div class="grid-container one"></div>
-    <div class="grid-item" id="grid-item2">
-        <h1 class="heading-title">Eat-da-Burger!</h1>
+    <div class="row" id="grid-item2">
+        <div class="col-sm-12">
+            <h1 class="heading-title">Eat-da-Burger!</h1>
+        </div>
     </div>
 
-       
+    <div class="row" id="grid-item3">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <div class="row">
+                <form class="create-form" id="burgerform" method="POST">  
+                    <label for="fname">What burger would you like? </label>
+                    <input type="text" id="fname" class="form-input" name="fname">
+                    <input type="submit" value="Submit">
+           
+                </form>
+            </div> 
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
 
-</div>
-<div class="grid-container five">
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-5">
+            <h3 class="burgerslist-heading">Burgers still to eat:</h3>
+            <ul class="list-group burgers-list">
+                {{#each burgers}}
+                    {{#unless devoured}}
+                    {{> burgers/burger-block devoured=false}}
+                    {{/unless}}
+                {{/each}}
+            </ul>       
+        </div>
+        <div class="col-sm-5">
+            <h3 class="burgerslist-heading">Burgers devoured:</h3>
+            <ul class="list-group burgers-list">
+                {{#each burgers}}
+                    {{#if devoured}}
+                    {{> burgers/burger-block devoured=true}}
+                    {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>    
+    
    
-    <div class="grid-item"></div>
-    <div class="grid-item" id="grid-item3">
-        
-            <form class="create-form" id="burgerform" method="POST">
-                
-                <label for="fname">What burger would you like? </label>
-                <input type="text" id="fname" class="form-input" name="fname">
-                <input type="submit" value="Submit">
-
-            </form>
-
-        </div> 
-</div>
-<div class="grid-container">
-   
-    <div class="grid-item"></div>
-    <div class="grid-item" id="grid-item4">
-         <h3>Burgers to eat:</h3>
-        <ul>
-            {{#each burgers}}
-                {{#unless devoured}}
-                {{> burgers/burger-block devoured=false}}
-                {{/unless}}
-            {{/each}}
-        </ul>       
-    <div class="grid-item" id="grid-item5">
-         <h3>Burgers devoured:</h3>
-        <ul>
-            {{#each burgers}}
-                {{#if devoured}}
-                {{> burgers/burger-block devoured=true}}
-                {{/if}}
-            {{/each}}
-        </ul>
-    </div>
-
-    </div> 
+    
 </div>
 

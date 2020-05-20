@@ -1,10 +1,17 @@
-<li>
-	{{burger_name}}
+<li class="list-group-item burgeritem">
+	<div class="row">
+		
+			<div class="col-9 ">
+				{{burger_name}}
+			</div>
+			<div class="col-3 btninline">
+				{{#if devoured}}
+				{{else}}
+					<button class="burgerbtn change-devoured " data-id="{{id}}" data-newdevoured="{{devoured}}">Devour It!</button>
+				{{/if}}
 
-	{{#if devoured}}
-	{{else}}
-		<button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}"> Devour me!</button>
-	{{/if}}
-
-	<button class="delete-burger" data-id="{{this.id}}">Delete</button>
+				<button class="burgerbtn delete-burger" data-id="{{this.id}}">x</button>
+			</div>
+		
+	</div>
 </li>

@@ -4,40 +4,65 @@ body{
   background-color: lightgoldenrodyellow;
 }
 
-.grid-container.five{
-  display:grid;
-  grid-template-columns: 20% 20% 20% 20% 20%;
-  align-content: center;
-}
 
-.grid-container.one{
-   text-align: center;
-}
-
-#grid-item3 {
-  grid-column-start: 3;
-  grid-column-end: 4;
-  text-align: center;
-  
-}
 
 .heading-title {
 
   text-align: center;
   font-family: 'Permanent Marker', cursive;
+  margin-bottom: 50px;
 
   }
 
 .burger-pic{
   background-color: white;
-  align-self: center;
+  justify-content: center;
   width: 150px;
+  
+}
+
+.burgers-list{
+  font-size: 80%;
+  margin: -5px;
+  margin-bottom: 0px;
+  padding-bottom:0px;
+}
+
+.burgerslist-heading {
+  font-size: 90%;
+  font-weight: bold;
+
+  
+}
+
+.btninline{
+  float: right;
+}
+
+.burgerbtn{
+  font-size: 75%;
+
+}
+
+.btninline{
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 0px;
+  padding-right:0px;
 }
 
 li {
   padding: 5px;
   margin: 5px;
-  background: #faebd7;
+  list-style: none;
+
+}
+
+
+.burgeritem{
+  margin: 5px;
+  background-color: transparent;
+  ba
 }
 
 .label {
@@ -54,12 +79,13 @@ li {
   margin-bottom: 5px;
 }
 
-.grid-container {
+form {
+  margin-bottom: 100px;
 
 }
 
-.grid-item {
-
+.grid-item1{
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items:center;
 }
-
-
